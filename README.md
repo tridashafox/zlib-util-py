@@ -1,6 +1,6 @@
 Simple python code which can decompress, compress, copy or hex dump information for a zlib data.
 When it performs an operation it uses the root of the input file name for the output file name while adding on the operation perfromed and resulting size in hex with a .bin extension.
-Set to use zlib BEST_COMPRESSION, zlib.DEFLATED, wbits=15, memLevel=8, DEFAULT_STRATEGY.
+Set to use zlib BEST_COMPRESSION, DEFLATED, wbits=15, memLevel=8, DEFAULT_STRATEGY.
 
 Examples using a zlib compressed block of data in the file fcompressed.bin:
 ```
