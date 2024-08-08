@@ -3,21 +3,29 @@ import sys
 import os
 
 def get_root_name(filename):
-    # Extract root name (everything before the first dot)
+    # Extract root name (everything before the first dot )
     base_name = os.path.basename(filename)
     root_name = base_name.split('.')[0]
     return root_name
 
-def hex_dump(filename, num_bytes=64):
+import sys
+
+def hex_dump(filename):
     try:
         with open(filename, 'rb') as f:
-            data = f.read(num_bytes)
+            data = f.read()
         
-        for i in range(0, len(data), 16):
-            chunk = data[i:i+16]
-            hex_values = ' '.join(f'{byte:02x}' for byte in chunk)
-            ascii_values = ''.join(chr(byte) if 32 <= byte <= 126 else '.' for byte in chunk)
-            print(f'{i:04x}: {hex_values:<48} {ascii_values}')
+        datalen = len(data)
+        for i in range(0, datalen, 16):
+            chunk = data[i:i+8]
+            hex_values1 = ' '.join(f'{byte:02X}' for byte in chunk)
+            ascii_values1 = ''.join(chr(byte) if 32 <= byte <= 126 else '.' for byte in chunk)
+            chunk = data[i+8:i+16]
+            hex_values2 = ' '.join(f'{byte:02X}' for byte in chunk)
+            ascii_values2 = ''.join(chr(byte) if 32 <= byte <= 126 else '.' for byte in chunk)
+            print(f'{i:04X}: {hex_values1:<24} {hex_values2:<24} {ascii_values1}{ascii_values2}')
+        
+        print(f'file size: 0x{datalen:X} ({datalen})')
     
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
@@ -34,7 +42,7 @@ def compress_file(input_filename):
 
     # Initialize the compressor object
     compressor = zlib.compressobj(
-        level=zlib.Z_BEST_COMPRESSION,  # Equivalent to zcLevel9 in Delphi
+        level=zlib.Z_BEST_COMPRESSION,  # Equivalent to zcLevel9 in Delphidi
         method=zlib.DEFLATED,
         wbits=15,  # 15 is the default for zlib format
         memLevel=8,  # Default memory level
