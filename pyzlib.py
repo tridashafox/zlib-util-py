@@ -3,7 +3,7 @@ import sys
 import os
 
 def get_root_name(filename):
-    # Extract root name (everything before the first  dot)
+    # Extract root name (everything before the first dot )
     base_name = os.path.basename(filename)
     root_name = base_name.split('.')[0]
     return root_name
