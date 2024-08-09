@@ -8,10 +8,10 @@ F:\pyzlibtool>python pyzlib.py
 Usage: python script.py <com|decom|copy|hex> <filename>
 
 F:\pyzlibtool>python pyzlib.py hex fcompressed.bin
-0000: 78 da b5 5d 7d 8c e4 c8 55 f7 de 6d c8 ed e6 fb  x..]}...U..m....
-0010: 12 72 c7 47 a2 65 0f c1 ad c8 ce d8 55 6d 77 f7  .r.G.e......Umw.
-0020: 4e c8 5d 77 4f cf cd e4 e6 2b d3 b3 b7 b9 b0 e0  N.]wO....+......
-0030: 78 ba dd 33 ce 74 b7 1b db bd 73 b3 49 a4 28 77  x..3.t....s.I.(w
+0000: 78 da b5 5d 7d 8c e4 c8  55 f7 de 6d c8 ed e6 fb  x..]}...U..m....
+0010: 12 72 c7 47 a2 65 0f c1  ad c8 ce d8 55 6d 77 f7  .r.G.e......Umw.
+0020: 4e c8 5d 77 4f cf cd e4  e6 2b d3 b3 b7 b9 b0 e0  N.]wO....+......
+0030: 78 ba dd 33 ce 74 b7 1b  db bd 73 b3 49 a4 28 77  x..3.t....s.I.(w
 
 F:\pyzlibtool>python pyzlib.py decom fcompressed.bin
 Successfully decompressed 'fcompressed.bin' to 'fcompressed-decom.00009B58.bin'
